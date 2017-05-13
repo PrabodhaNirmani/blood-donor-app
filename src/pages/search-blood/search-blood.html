@@ -1,0 +1,53 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Search Blood</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <br><br>
+  <form (ngSubmit)="search(f.value)" #f="ngForm">
+    <ion-list>
+      <ion-item>
+        <ion-label class="large-text">Blood Group</ion-label>
+        <ion-select class="large-text" ngModel name="blood" large>
+          <ion-option value="A+">A+  {{+"   "}}</ion-option>
+          <ion-option value="A-">A -  {{+"   "}} </ion-option>
+          <ion-option value="AB+">AB+  {{+"   "}} </ion-option>
+          <ion-option value="AB-">AB -  {{+"   "}}</ion-option>
+          <ion-option value="B+">B+  {{+"   "}}</ion-option>
+          <ion-option value="B-">B -  {{+"   "}}</ion-option>
+          <ion-option value="O+">O+  {{+"   "}} </ion-option>
+          <ion-option value="O-">O -  {{+"   "}}  </ion-option>
+          </ion-select>
+          <button ion-button color="danger" large item-right type="submit">
+            <ion-icon name="search" ></ion-icon>
+          </button>
+      </ion-item>
+    </ion-list>
+    
+  </form>
+  <br>
+<ion-grid>
+  <ion-row>
+    <ion-col col-12><ion-item [hidden]="high" class="high-item"> High</ion-item></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-4><ion-item [hidden]="low" class="low-item">Low</ion-item></ion-col>
+  </ion-row>
+   <ion-row>
+    <ion-col col-8><ion-item [hidden]="normal" class="normal-item">Normal</ion-item></ion-col>
+  </ion-row>
+</ion-grid>
+  
+ 
+
+  <ion-item [hidden]="error" class="error-item">
+    {{errorMsg}}
+  </ion-item>
+  
+</ion-content>

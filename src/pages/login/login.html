@@ -1,0 +1,46 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="login(f.value)" #f="ngForm">
+    <ion-grid>
+      <ion-row>
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type="text" name="username" required ngModel></ion-input> 
+        </ion-item>
+      </ion-row>
+    
+      <ion-row>
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password" name="password" required ngModel></ion-input>
+        </ion-item>
+      </ion-row>
+    </ion-grid>
+    <div padding align="right">
+      <a href="#" (click)="onLoadSignUp()">Sign Up</a>    
+    </div>
+    
+    <button ion-button block type="submit" [disabled]="!f.valid">Login</button>
+   
+  </form>
+  <br>
+  <ion-item [hidden]="success" class="success-item">
+    
+			{{successMsg}}
+		
+  </ion-item>
+  <ion-item [hidden]="error" class="error-item">
+    
+			{{errorMsg}}
+		
+  </ion-item>
+</ion-content>
