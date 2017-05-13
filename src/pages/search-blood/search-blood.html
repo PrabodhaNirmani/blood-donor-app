@@ -14,7 +14,7 @@
     <ion-list>
       <ion-item>
         <ion-label class="large-text">Blood Group</ion-label>
-        <ion-select class="large-text" ngModel name="blood" large>
+        <ion-select class="large-text" ngModel name="blood" required>
           <ion-option value="A+">A+  {{+"   "}}</ion-option>
           <ion-option value="A-">A -  {{+"   "}} </ion-option>
           <ion-option value="AB+">AB+  {{+"   "}} </ion-option>
@@ -24,7 +24,7 @@
           <ion-option value="O+">O+  {{+"   "}} </ion-option>
           <ion-option value="O-">O -  {{+"   "}}  </ion-option>
           </ion-select>
-          <button ion-button color="danger" large item-right type="submit">
+          <button ion-button color="danger" large item-right type="submit"  [disabled]="!f.valid">
             <ion-icon name="search" ></ion-icon>
           </button>
       </ion-item>

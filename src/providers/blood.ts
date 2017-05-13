@@ -20,4 +20,9 @@ export class Blood {
     
   }
 
+  addRequest(request){
+    return this.http.post(this.appUrl+'add-request',{request:request}).map(res =>res.json());
+
+  }
+
 }

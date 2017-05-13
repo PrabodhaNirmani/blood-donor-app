@@ -1,0 +1,76 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Emergency Request</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<br><br>
+  <form (ngSubmit)="saveRequest(f.value)" #f="ngForm">
+    <ion-list>
+      <ion-item>
+        <ion-label class="large-text">Blood Group :</ion-label>
+        <ion-select class="large-text" ngModel name="blood" required >
+          <ion-option value="A+">A+  {{+"   "}}</ion-option>
+          <ion-option value="A-">A -  {{+"   "}} </ion-option>
+          <ion-option value="AB+">AB+  {{+"   "}} </ion-option>
+          <ion-option value="AB-">AB -  {{+"   "}}</ion-option>
+          <ion-option value="B+">B+  {{+"   "}}</ion-option>
+          <ion-option value="B-">B -  {{+"   "}}</ion-option>
+          <ion-option value="O+">O+  {{+"   "}} </ion-option>
+          <ion-option value="O-">O -  {{+"   "}}  </ion-option>
+        </ion-select>
+          
+      </ion-item>
+      <ion-item>
+        <ion-label class="large-text">District :</ion-label>
+        <ion-select class="large-text" ngModel name="district" required>
+          <ion-option *ngFor="let district of districts" value="{{district.d}}" checked="false">{{district.d}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label class="large-text">Description :</ion-label>
+      <!--</ion-item>
+      <ion-item>-->
+        
+        <ion-textarea  placeholder="Enter description" name="description" ngModel required ></ion-textarea>
+    
+
+      </ion-item>
+      <ion-item>
+        <ion-label class="large-text">Contact Person :</ion-label>
+      
+
+        <ion-input placeholder="Enter name" name="name" ngModel required></ion-input>
+
+      </ion-item>
+      <ion-item>
+        <ion-label class="large-text">Contact No. :</ion-label>
+      
+
+        <ion-input placeholder="Enter contact number" name="tele_no" ngModel required></ion-input>
+
+      </ion-item>
+
+    </ion-list>
+    
+    <button ion-button block type="submit" class="large-text" [disabled]="!f.valid">Save Request</button>
+   
+  </form>
+  <br>
+  <ion-item [hidden]="success" class="success-item">
+    
+			{{successMsg}}
+		
+  </ion-item>
+  <ion-item [hidden]="error" class="error-item">
+    
+			{{errorMsg}}
+		
+  </ion-item>
+
+</ion-content>

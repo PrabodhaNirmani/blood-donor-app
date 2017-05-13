@@ -1,48 +1,19 @@
 
 <ion-header>
-
   <ion-navbar>
-    <ion-title>Emergency Request</ion-title>
+    <ion-buttons end>
+      <button (click)="onLoadAddPage()" ion-button icon-only>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Emergency Request
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-<br><br>
-  <form (ngSubmit)="search(f.value)" #f="ngForm">
-    <ion-list>
-      <ion-item>
-        <ion-label class="large-text">Blood Group</ion-label>
-        <ion-select class="large-text" ngModel name="blood" large>
-          <ion-option value="A+">A+  {{+"   "}}</ion-option>
-          <ion-option value="A-">A -  {{+"   "}} </ion-option>
-          <ion-option value="AB+">AB+  {{+"   "}} </ion-option>
-          <ion-option value="AB-">AB -  {{+"   "}}</ion-option>
-          <ion-option value="B+">B+  {{+"   "}}</ion-option>
-          <ion-option value="B-">B -  {{+"   "}}</ion-option>
-          <ion-option value="O+">O+  {{+"   "}} </ion-option>
-          <ion-option value="O-">O -  {{+"   "}}  </ion-option>
-          </ion-select>
-          
-      </ion-item>
-      <ion-item>
-        <ion-label class="large-text">District</ion-label>
-        <ion-select class="large-text" ngModel name="district" >
-          <ion-option value="A+">A+  {{+"   "}}</ion-option>
-          <ion-option value="A-">A -  {{+"   "}} </ion-option>
-          <ion-option value="AB+">AB+  {{+"   "}} </ion-option>
-          <ion-option value="AB-">AB -  {{+"   "}}</ion-option>
-          <ion-option value="B+">B+  {{+"   "}}</ion-option>
-          <ion-option value="B-">B -  {{+"   "}}</ion-option>
-          <ion-option value="O+">O+  {{+"   "}} </ion-option>
-          <ion-option value="O-">O -  {{+"   "}}  </ion-option>
-          </ion-select>
-          
-      </ion-item>
-
-    </ion-list>
-    
-  </form>
-
+  
 </ion-content>
