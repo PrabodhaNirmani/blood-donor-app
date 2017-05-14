@@ -16,6 +16,11 @@ export class EventHandler {
 
   }
 
+  addDonationCampaign(campaign){
+    return this.http.post(this.appUrl+'add-donation-campaign',{campaign:campaign}).map(res =>res.json());
+
+  }
+
   getRequests(){
     return this.http.get(this.appUrl+'get-request').map(res =>res.json());
 

@@ -14,31 +14,35 @@
     <ion-list>
       <ion-item>
         <ion-label class="large-text">Address :</ion-label>
-        <ion-input placeholder="Enter address" type="text" name="address" ngModel required></ion-input>
+        <ion-input placeholder="Fill address" type="text" name="address" ngModel required></ion-input>
           
       </ion-item>
       <ion-item>
         <ion-label class="large-text">Date :</ion-label>
-        <ion-input placeholder="Enter date" name="date" type="date" ngModel required></ion-input>
+        <ion-datetime class="large-text" displayFormat="DD - MMM - YYYY" pickerFormat="DD MMMM YYYY" name="date" ngModel placeholder="Click here" required></ion-datetime>
+        <!--<ion-input placeholder="Enter date" name="date" type="date" ngModel required></ion-input>-->
           
       </ion-item>
       <ion-item>
         <ion-label class="large-text">Duration :</ion-label>
-        <ion-input placeholder="From" name="from" ngModel required></ion-input>
-        <ion-input placeholder="To" name="to" ngModel required></ion-input>
         
+        <ion-datetime class="large-text" displayFormat="hh:mm  A" pickerFormat="hh mm A" placeholder="From " name="from" ngModel required ></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label class="large-text"></ion-label>
+        <ion-datetime item-align="right" class="large-text" displayFormat="hh:mm  A" pickerFormat="hh mm A" placeholder="To " name="to" ngModel required ></ion-datetime>
           
       </ion-item>
       <ion-item>
         <ion-label class="large-text">District :</ion-label>
-        <ion-select class="large-text" ngModel name="district" required>
+        <ion-select class="large-text" ngModel name="district" required placeholder="Click here">
           <ion-option *ngFor="let district of districts" value="{{district.d}}" checked="false">{{district.d}}</ion-option>
         </ion-select>
       </ion-item>
       <ion-item>
         <ion-label class="large-text">Description :</ion-label>
       
-        <ion-textarea  placeholder="Enter description" name="description" ngModel required ></ion-textarea>
+        <ion-textarea  placeholder="Fill description" name="description" ngModel required ></ion-textarea>
     
 
       </ion-item>
@@ -46,7 +50,7 @@
         <ion-label class="large-text">Charity organization :</ion-label>
       
 
-        <ion-input placeholder="Enter organization name" name="org" ngModel required></ion-input>
+        <ion-input placeholder="Fill organization" name="org" ngModel required></ion-input>
 
       </ion-item>
       

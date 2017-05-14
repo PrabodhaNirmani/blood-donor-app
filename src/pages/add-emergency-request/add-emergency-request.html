@@ -14,7 +14,7 @@
     <ion-list>
       <ion-item>
         <ion-label class="large-text">Blood Group :</ion-label>
-        <ion-select class="large-text" ngModel name="blood" required >
+        <ion-select class="large-text" ngModel name="blood" required placeholder="Click here">
           <ion-option value="A+">A+  {{+"   "}}</ion-option>
           <ion-option value="A-">A -  {{+"   "}} </ion-option>
           <ion-option value="AB+">AB+  {{+"   "}} </ion-option>
@@ -28,14 +28,14 @@
       </ion-item>
       <ion-item>
         <ion-label class="large-text">District :</ion-label>
-        <ion-select class="large-text" ngModel name="district" required>
+        <ion-select class="large-text" ngModel name="district" required placeholder="Click here">
           <ion-option *ngFor="let district of districts" value="{{district.d}}" checked="false">{{district.d}}</ion-option>
         </ion-select>
       </ion-item>
       <ion-item>
         <ion-label class="large-text">Description :</ion-label>
       
-        <ion-textarea  placeholder="Enter description" name="description" ngModel required ></ion-textarea>
+        <ion-textarea  placeholder="Fill description" name="description" ngModel required ></ion-textarea>
     
 
       </ion-item>
@@ -43,14 +43,14 @@
         <ion-label class="large-text">Contact Person :</ion-label>
       
 
-        <ion-input placeholder="Enter name" name="name" ngModel required></ion-input>
+        <ion-input placeholder="Fill name" name="name" ngModel required></ion-input>
 
       </ion-item>
       <ion-item>
         <ion-label class="large-text">Contact No. :</ion-label>
       
 
-        <ion-input placeholder="Enter contact number" name="tele_no" ngModel required></ion-input>
+        <ion-input placeholder="Fill contact number" type="tel" name="tele_no" ngModel required></ion-input>
 
       </ion-item>
 

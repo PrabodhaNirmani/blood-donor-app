@@ -13,23 +13,23 @@
     <ion-grid>
       <ion-row>
         <ion-item>
-          <ion-label floating>Username</ion-label>
-          <ion-input type="text" name="username" required ngModel></ion-input> 
+          <ion-label class="large-text" floating>Username</ion-label>
+          <ion-input class="large-text" type="text" name="username" required ngModel></ion-input> 
         </ion-item>
       </ion-row>
     
       <ion-row>
         <ion-item>
-          <ion-label floating>Password</ion-label>
-          <ion-input type="password" name="password" required ngModel></ion-input>
+          <ion-label class="large-text" floating>Password</ion-label>
+          <ion-input class="large-text" type="password" name="password" required ngModel></ion-input>
         </ion-item>
       </ion-row>
     </ion-grid>
     <div padding align="right">
-      <a href="#" (click)="onLoadSignUp()">Sign Up</a>    
+      <a class="normal-text" href="#" (click)="onLoadSignUp()">Sign Up</a>    
     </div>
     
-    <button ion-button block type="submit" [disabled]="!f.valid">Login</button>
+    <button class="large-text" ion-button block type="submit" [disabled]="!f.valid">Login</button>
    
   </form>
   <br>

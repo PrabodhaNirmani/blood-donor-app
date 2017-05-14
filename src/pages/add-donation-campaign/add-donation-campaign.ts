@@ -31,4 +31,40 @@ export class AddDonationCampaign {
     loader.present();
   }
 
+  saveRequest(campaign){
+    this.success=true;
+    this.error=true;
+    this.presentLoading();
+    setTimeout(()=>{
+      this.eventService.addDonationCampaign(campaign).subscribe(res=>{
+        this.data=res;
+        if(this.data.success){
+          this.successMsg=this.data.message+"... Redirecting...";
+          this.success=false;
+          if(this.data.donors){
+            //this is the sending notification part
+            console.log(this.data.donors)
+          }
+          else{
+            console.log("no donors")
+          }
+         
+          setTimeout(()=>{
+            this.navCtrl.pop();
+          },3000);
+        }
+        else{
+          this.errorMsg=this.data.message;
+          this.error=false;
+        }
+      });
+
+        
+
+    },3000);
+    
+
+
+  }
+
 }

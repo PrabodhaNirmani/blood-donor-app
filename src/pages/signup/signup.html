@@ -13,36 +13,36 @@
     <ion-grid>
       <ion-row>
         <ion-item>
-          <ion-label floating>Email</ion-label>
-          <ion-input type="email" name="email" required ngModel></ion-input> 
+          <ion-label class="large-text" floating>Email</ion-label>
+          <ion-input class="large-text" type="email" name="email" required ngModel></ion-input> 
         </ion-item>
       </ion-row>
       
       <ion-row>
         <ion-item>
-          <ion-label floating>Username</ion-label>
-          <ion-input type="text" name="username" required ngModel></ion-input> 
+          <ion-label class="large-text" floating>Username</ion-label>
+          <ion-input class="large-text" type="text" name="username" required ngModel></ion-input> 
         </ion-item>
       </ion-row>
     
       <ion-row>
         <ion-item>
-          <ion-label floating>Password</ion-label>
-          <ion-input type="password" name="password" required ngModel></ion-input>
+          <ion-label class="large-text" floating>Password</ion-label>
+          <ion-input class="large-text" type="password" name="password" required ngModel></ion-input>
         </ion-item>
       </ion-row>
       <ion-row>
         <ion-item>
-          <ion-label floating>Confirm Password</ion-label>
-          <ion-input type="password" name="cpassword" required ngModel></ion-input>
-          <!--<p [show]="f.password.value!=f.cpassword" ></p>-->
+          <ion-label class="large-text" floating>Confirm Password</ion-label>
+          <ion-input class="large-text" type="password" name="cpassword" required ngModel></ion-input>
+         
         </ion-item>
       </ion-row>
       
     </ion-grid>
     
     
-    <button ion-button block type="submit" [disabled]="!f.valid">Sign Up</button>
+    <button class="large-text" ion-button block type="submit" [disabled]="!f.valid">Sign Up</button>
    
   </form>
   <br>
