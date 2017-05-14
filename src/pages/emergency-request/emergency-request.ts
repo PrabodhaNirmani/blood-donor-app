@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { AppSettings } from "../../providers/app-settings";
 import { AddEmergencyRequest } from "../add-emergency-request/add-emergency-request";
+import { EventHandler } from "../../providers/event-handler";
 
 @IonicPage()
 @Component({
@@ -9,15 +10,12 @@ import { AddEmergencyRequest } from "../add-emergency-request/add-emergency-requ
   templateUrl: 'emergency-request.html',
 })
 export class EmergencyRequest {
-  districts=this.app.getDistricts();
+ 
   data:any;
-  successMsg:any;
-  errorMsg:any;
-  success:any;
-  error:any;
-  constructor(public navCtrl: NavController, public app:AppSettings) {
-    this.success=true;
-    this.error=true;
+  requests:{}[]=[];
+  
+
+  constructor(public navCtrl: NavController,public eventService:EventHandler) {
     
     
   }
@@ -25,6 +23,12 @@ export class EmergencyRequest {
   onLoadAddPage(){
     this.navCtrl.push(AddEmergencyRequest)
 
+  }
+  ionViewWillEnter(){
+    this.eventService.getRequests().subscribe(res=>{
+        this.data=res;
+        this.requests=this.data.requests;
+    });
   }
 
 

@@ -15,5 +15,20 @@
 
 
 <ion-content padding>
+  <ion-list>
+
+    <ion-item *ngFor="let request of requests">
+      <ion-card>
+        <ion-card-header class="large-text">
+          {{request.abo + request.rh}} | {{request.district}} | {{request.date.substr(0,10)}}
+        </ion-card-header>
+        <ion-card-content class="medium-text">
+          {{request.description}}<br>
+          {{request.contact_person}} - {{request.contact_no}}
+        </ion-card-content>
+</ion-card>
+<!--{{request.contact_no}}-->
+    </ion-item>
+  </ion-list>
   
 </ion-content>

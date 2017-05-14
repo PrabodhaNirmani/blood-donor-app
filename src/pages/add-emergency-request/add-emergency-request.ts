@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { AppSettings } from "../../providers/app-settings";
-import { Blood } from "../../providers/blood";
+import { EventHandler } from "../../providers/event-handler";
 
 
 @IonicPage()
@@ -16,7 +16,7 @@ export class AddEmergencyRequest {
   errorMsg:any;
   success:any;
   error:any;
-  constructor(public navCtrl: NavController,public bloodService:Blood, public app:AppSettings,public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController,public eventService:EventHandler, public app:AppSettings,public loadingCtrl: LoadingController) {
     this.success=true;
     this.error=true;
     
@@ -36,12 +36,13 @@ export class AddEmergencyRequest {
     this.error=true;
     this.presentLoading();
     setTimeout(()=>{
-      this.bloodService.addRequest(request).subscribe(res=>{
+      this.eventService.addRequest(request).subscribe(res=>{
         this.data=res;
         if(this.data.success){
           this.successMsg=this.data.message+"... Redirecting...";
           this.success=false;
           if(this.data.donors){
+            //this is the sending notification part
             console.log(this.data.donors)
           }
           else{

@@ -9,21 +9,24 @@
 
 
 <ion-content padding>
-<br><br>
-  <form (ngSubmit)="saveRequest(f.value)" #f="ngForm">
+  <br><br>
+ <form (ngSubmit)="saveRequest(f.value)" #f="ngForm">
     <ion-list>
       <ion-item>
-        <ion-label class="large-text">Blood Group :</ion-label>
-        <ion-select class="large-text" ngModel name="blood" required >
-          <ion-option value="A+">A+  {{+"   "}}</ion-option>
-          <ion-option value="A-">A -  {{+"   "}} </ion-option>
-          <ion-option value="AB+">AB+  {{+"   "}} </ion-option>
-          <ion-option value="AB-">AB -  {{+"   "}}</ion-option>
-          <ion-option value="B+">B+  {{+"   "}}</ion-option>
-          <ion-option value="B-">B -  {{+"   "}}</ion-option>
-          <ion-option value="O+">O+  {{+"   "}} </ion-option>
-          <ion-option value="O-">O -  {{+"   "}}  </ion-option>
-        </ion-select>
+        <ion-label class="large-text">Address :</ion-label>
+        <ion-input placeholder="Enter address" type="text" name="address" ngModel required></ion-input>
+          
+      </ion-item>
+      <ion-item>
+        <ion-label class="large-text">Date :</ion-label>
+        <ion-input placeholder="Enter date" name="date" type="date" ngModel required></ion-input>
+          
+      </ion-item>
+      <ion-item>
+        <ion-label class="large-text">Duration :</ion-label>
+        <ion-input placeholder="From" name="from" ngModel required></ion-input>
+        <ion-input placeholder="To" name="to" ngModel required></ion-input>
+        
           
       </ion-item>
       <ion-item>
@@ -40,19 +43,13 @@
 
       </ion-item>
       <ion-item>
-        <ion-label class="large-text">Contact Person :</ion-label>
+        <ion-label class="large-text">Charity organization :</ion-label>
       
 
-        <ion-input placeholder="Enter name" name="name" ngModel required></ion-input>
+        <ion-input placeholder="Enter organization name" name="org" ngModel required></ion-input>
 
       </ion-item>
-      <ion-item>
-        <ion-label class="large-text">Contact No. :</ion-label>
       
-
-        <ion-input placeholder="Enter contact number" name="tele_no" ngModel required></ion-input>
-
-      </ion-item>
 
     </ion-list>
     
@@ -70,5 +67,6 @@
 			{{errorMsg}}
 		
   </ion-item>
+
 
 </ion-content>

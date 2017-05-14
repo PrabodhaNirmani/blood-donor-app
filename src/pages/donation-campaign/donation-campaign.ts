@@ -1,24 +1,33 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
+import { EventHandler } from "../../providers/event-handler";
+import { AddDonationCampaign } from "../add-donation-campaign/add-donation-campaign";
+import { AppSettings } from "../../providers/app-settings";
 
-/**
- * Generated class for the DonationCampaign page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+
 @IonicPage()
 @Component({
   selector: 'page-donation-campaign',
   templateUrl: 'donation-campaign.html',
 })
 export class DonationCampaign {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  data:any;
+  campaigns:{}[]=[];
+  
+  constructor(public navCtrl: NavController,public eventService:EventHandler) {
+      
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DonationCampaign');
+  onLoadAddPage(){
+    this.navCtrl.push(AddDonationCampaign)
+
+  }
+  
+  ionViewWillEnter(){
+    this.eventService.getDonationCampaigns().subscribe(res=>{
+        this.data=res;
+        this.campaigns=this.data.campaigns;
+    });
   }
 
 }

@@ -5,9 +5,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from "@angular/http";
 
-import {User} from '../providers/user';
-import {Blood} from '../providers/blood';
+import { User } from '../providers/user';
+import { Blood } from '../providers/blood';
 import { AppSettings } from "../providers/app-settings";
+import { EventHandler } from '../providers/event-handler';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -18,6 +19,7 @@ import { SearchBlood } from '../pages/search-blood/search-blood';
 import { Signup } from "../pages/signup/signup";
 import { Dashboard } from "../pages/dashboard/dashboard";
 import { AddEmergencyRequest } from "../pages/add-emergency-request/add-emergency-request";
+import { AddDonationCampaign } from "../pages/add-donation-campaign/add-donation-campaign";
 
 
 
@@ -31,7 +33,8 @@ import { AddEmergencyRequest } from "../pages/add-emergency-request/add-emergenc
     EmergencyRequest,
     SearchBlood,
     Dashboard,
-    AddEmergencyRequest
+    AddEmergencyRequest,
+    AddDonationCampaign
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { AddEmergencyRequest } from "../pages/add-emergency-request/add-emergenc
     EmergencyRequest,
     SearchBlood,
     Dashboard,
-    AddEmergencyRequest
+    AddEmergencyRequest,
+    AddDonationCampaign
   ],
   providers: [
     StatusBar,
@@ -56,6 +60,7 @@ import { AddEmergencyRequest } from "../pages/add-emergency-request/add-emergenc
     User,
     Blood,
     AppSettings,
+    EventHandler,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
