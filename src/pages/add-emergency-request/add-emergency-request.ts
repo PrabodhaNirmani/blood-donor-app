@@ -34,12 +34,19 @@ export class AddEmergencyRequest {
   saveRequest(request){
     this.success=true;
     this.error=true;
+    this.presentLoading();
     setTimeout(()=>{
       this.bloodService.addRequest(request).subscribe(res=>{
         this.data=res;
         if(this.data.success){
           this.successMsg=this.data.message+"... Redirecting...";
           this.success=false;
+          if(this.data.donors){
+            console.log(this.data.donors)
+          }
+          else{
+            console.log("no donors")
+          }
          
           setTimeout(()=>{
             this.navCtrl.pop();
