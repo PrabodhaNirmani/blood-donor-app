@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { Signup } from './signup';
-import { JsonpModule, HttpModule } from "@angular/http/http";
+
 
 @NgModule({
   declarations: [
@@ -9,8 +9,7 @@ import { JsonpModule, HttpModule } from "@angular/http/http";
   ],
   imports: [
     IonicPageModule.forChild(Signup),
-    JsonpModule,
-    HttpModule 
+    
   ],
   exports: [
     Signup
