@@ -19,7 +19,7 @@ export class Signup {
   success:any;
   error:any;
   
-  constructor(public userService:User,public loadingCtrl: LoadingController, public navCtrl: NavController) {
+  constructor(private userService:User,private loadingCtrl: LoadingController, private navCtrl: NavController) {
     this.success=true;
     this.error=true;
   }

@@ -18,7 +18,7 @@ export class SearchBlood {
   error:any;
   
   
-  constructor(public bloodService:Blood,public loadingCtrl: LoadingController) {
+  constructor(private bloodService:Blood,private loadingCtrl: LoadingController) {
     this.success=true;
     this.error=true;
     this.low=true;

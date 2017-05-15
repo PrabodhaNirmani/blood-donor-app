@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, ModalController } from 'ionic-angular';
 import { EventHandler } from "../../providers/event-handler";
 import { AddDonationCampaign } from "../add-donation-campaign/add-donation-campaign";
 import { AppSettings } from "../../providers/app-settings";
+import { Place } from "../place/place";
 
 
 @IonicPage()
@@ -14,7 +15,7 @@ export class DonationCampaign {
   data:any;
   campaigns:{}[]=[];
   
-  constructor(public navCtrl: NavController,public eventService:EventHandler) {
+  constructor(private modalCtrl:ModalController,public navCtrl: NavController,private eventService:EventHandler) {
       
   }
 
@@ -28,6 +29,11 @@ export class DonationCampaign {
         this.data=res;
         this.campaigns=this.data.campaigns;
     });
+  }
+
+  onOpenPlace(campaign){
+    this.modalCtrl.create(Place,campaign).present();
+
   }
 
 }

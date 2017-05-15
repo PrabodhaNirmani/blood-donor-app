@@ -15,7 +15,7 @@ export class EmergencyRequest {
   requests:{}[]=[];
   
 
-  constructor(public navCtrl: NavController,public eventService:EventHandler) {
+  constructor(public navCtrl: NavController,private eventService:EventHandler) {
     
     
   }
@@ -24,6 +24,7 @@ export class EmergencyRequest {
     this.navCtrl.push(AddEmergencyRequest)
 
   }
+  
   ionViewWillEnter(){
     this.eventService.getRequests().subscribe(res=>{
         this.data=res;

@@ -16,7 +16,10 @@ export class AddDonationCampaign {
   errorMsg:any;
   success:any;
   error:any;
-  constructor(public navCtrl: NavController,public eventService:EventHandler, public app:AppSettings,public loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController,
+  private eventService:EventHandler,
+  private app:AppSettings,
+  private loadingCtrl: LoadingController) {
     this.success=true;
     this.error=true;
     

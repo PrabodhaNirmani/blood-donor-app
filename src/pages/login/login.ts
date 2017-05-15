@@ -16,7 +16,10 @@ export class Login {
   success:any;
   error:any;
 
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public navParams: NavParams, public userService:User) {
+  constructor(public navCtrl: NavController,
+  private loadingCtrl: LoadingController,
+  private navParams: NavParams,
+  private userService:User) {
     this.success=true;
     this.error=true;
   }

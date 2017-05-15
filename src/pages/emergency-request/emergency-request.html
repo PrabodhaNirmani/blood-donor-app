@@ -23,11 +23,29 @@
           {{request.abo + request.rh}} | {{request.district}} | {{request.date.substr(0,10)}}
         </ion-card-header>
         <ion-card-content class="medium-text">
-          {{request.description}}<br>
-          {{request.contact_person}} - {{request.contact_no}}
+          <ion-list>
+            <ion-item>
+              <ion-icon name="text" item-left large></ion-icon>
+              <p>{{request.description}}</p>
+
+            </ion-item>
+            <ion-item>
+              <ion-icon name="person" item-left large></ion-icon>
+              <h3>{{request.contact_person}}</h3>
+
+            </ion-item>
+            <ion-item>
+              <ion-icon name="call" item-left large></ion-icon>
+              <h3>{{request.contact_no}}</h3>
+
+            </ion-item>
+            
+     
+          </ion-list>
+         
         </ion-card-content>
-</ion-card>
-<!--{{request.contact_no}}-->
+      </ion-card>
+
     </ion-item>
   </ion-list>
   

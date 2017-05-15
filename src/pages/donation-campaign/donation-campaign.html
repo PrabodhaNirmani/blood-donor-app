@@ -14,5 +14,53 @@
 
 
 <ion-content padding>
+  <ion-list>
 
+    <ion-item *ngFor="let campaign of campaigns">
+      <ion-card>
+        <ion-fab right top>
+          <button ion-fab (click)="onOpenPlace(campaign)" >
+            <ion-icon name="pin"></ion-icon>
+          </button>
+        </ion-fab>
+
+        <ion-card-header class="large-text">
+          {{campaign.district}} on {{campaign.date}}
+        </ion-card-header>
+        <ion-card-content class="medium-text">
+          <ion-list>
+            <ion-item>
+              <ion-icon name="pin" item-left large></ion-icon>
+              <h3>{{campaign.address}}</h3>
+
+            </ion-item>
+            <ion-item>
+              <ion-icon name="alarm" item-left large></ion-icon>
+              <h3>{{campaign.from}} - {{campaign.to}}</h3>
+
+            </ion-item>
+            <!--<ion-item>-->
+             
+            <!--</ion-item>-->
+
+            <ion-item>
+              <ion-icon name="people" item-left large></ion-icon>
+              <h3>{{campaign.charity_organization}}</h3>
+
+            </ion-item>
+            
+     
+          </ion-list>
+          <!--<ion-input>
+          {{campaign.description}}</ion-input>-->
+         <!--<p>{{campaign.description}}</p>-->
+         <br><br>
+        </ion-card-content>
+         
+
+      </ion-card>
+
+    </ion-item>
+  </ion-list>
+ 
 </ion-content>
