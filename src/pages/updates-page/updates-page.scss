@@ -1,4 +1,4 @@
-page-emergency-request {
+page-updates-page {
     .success-item{
         background-color: lightgreen
     }
@@ -8,12 +8,10 @@ page-emergency-request {
     .large-text{
         font-size: 20px
     }
-
-    .medium-text{
-        font-size: 15px
+    .card-ok{
+        background-color: lightgreen
     }
-    .card-color{
+    .card-not-ok{
         background-color: lightcoral
     }
-    
 }

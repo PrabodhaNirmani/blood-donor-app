@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
 import { Signup } from "../signup/signup";
 import { User } from "../../providers/user";
 import { Dashboard } from "../dashboard/dashboard";
+import { AppSettings } from "../../providers/app-settings";
 
 @IonicPage()
 @Component({
@@ -19,6 +20,7 @@ export class Login {
   constructor(public navCtrl: NavController,
   private loadingCtrl: LoadingController,
   private navParams: NavParams,
+  private app:AppSettings,
   private userService:User) {
     this.success=true;
     this.error=true;
@@ -33,7 +35,7 @@ export class Login {
   presentLoading() {
     let loader = this.loadingCtrl.create({
       content: "Please wait...",
-      duration: 3000
+      duration: 5000
     });
     loader.present();
   }
@@ -49,6 +51,9 @@ export class Login {
           this.successMsg=this.data.message+"... Redirecting...";
           this.success=false;
           this.userService.setLoggingStatus(true);
+          // console.log(this.data)
+          
+          this.app.setUser(this.data.user.username,this.data.user.email);
           setTimeout(()=>{
             this.navCtrl.setRoot(Dashboard);
           },3000);
@@ -61,7 +66,7 @@ export class Login {
 
         
 
-    },3000);
+    },5000);
     
 
 

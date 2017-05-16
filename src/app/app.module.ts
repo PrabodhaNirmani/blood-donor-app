@@ -25,6 +25,11 @@ import { Dashboard } from "../pages/dashboard/dashboard";
 import { AddEmergencyRequest } from "../pages/add-emergency-request/add-emergency-request";
 import { AddDonationCampaign } from "../pages/add-donation-campaign/add-donation-campaign";
 import { Place } from "../pages/place/place";
+import { Message } from "../pages/message/message";
+import { Updates } from "../pages/updates/updates";
+import { DetailPage } from "../pages/detail-page/detail-page";
+import { ProfilePage } from "../pages/profile-page/profile-page";
+import { UpdatesPage } from "../pages/updates-page/updates-page";
 
 
 
@@ -40,7 +45,11 @@ import { Place } from "../pages/place/place";
     Dashboard,
     AddEmergencyRequest,
     AddDonationCampaign,
-    Place
+    Place,
+    Message,
+    DetailPage,
+    ProfilePage,
+    UpdatesPage
   ],
   imports: [
     BrowserModule,
@@ -62,7 +71,11 @@ import { Place } from "../pages/place/place";
     Dashboard,
     AddEmergencyRequest,
     AddDonationCampaign,
-    Place
+    Place,
+    Message,
+    DetailPage,
+    ProfilePage,
+    UpdatesPage
   ],
   providers: [
     StatusBar,

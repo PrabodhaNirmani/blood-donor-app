@@ -1,0 +1,52 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>My Profile Info<</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-card-header class="card-color large-text">
+      {{user.name }}
+    </ion-card-header>
+    <ion-card-content class="medium-text">
+      <ion-list>
+        
+        <ion-item>
+          <ion-icon name="text" item-left large></ion-icon>
+          <h3>{{user.nic_no}}</h3>
+
+        </ion-item>
+        <ion-item>
+          <ion-icon name="pin" item-left large></ion-icon>
+          <h3>{{user.address}}</h3>
+
+        </ion-item>
+        <ion-item>
+          <ion-icon name="call" item-left large></ion-icon>
+          <h3>{{user.tele_no}}</h3>
+
+        </ion-item>
+        <ion-item>
+          <ion-icon name="mail" item-left large></ion-icon>
+          <h3>{{user.email}}</h3>
+
+        </ion-item>
+        
+  
+      </ion-list>
+      
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

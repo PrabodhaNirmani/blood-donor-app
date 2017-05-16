@@ -1,5 +1,13 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
+import { Message } from "../message/message";
+import { DonationCampaign } from "../donation-campaign/donation-campaign";
+import { EmergencyRequest } from "../emergency-request/emergency-request";
+import { SearchBlood } from "../search-blood/search-blood";
+import { DetailPage } from "../detail-page/detail-page";
+import { ProfilePage } from "../profile-page/profile-page";
+import { UpdatesPage } from "../updates-page/updates-page";
+
 
 
 @IonicPage()
@@ -9,11 +17,39 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class Dashboard {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl:NavController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Dashboard');
+
+  onLoadMessagePage(){
+    this.navCtrl.push(Message)
+
   }
+  onLoadDoantionCampaign(){
+    this.navCtrl.push(DonationCampaign);
+  }
+
+  onLoadEmergencyRequest(){
+    this.navCtrl.push(EmergencyRequest);
+  }
+
+  onLoadSearchBlood(){
+    this.navCtrl.push(SearchBlood);
+  }
+
+  onLoadDetailCampaign(){
+    this.navCtrl.push(DetailPage);
+  }
+
+  onLoadProfileRequest(){
+    this.navCtrl.push(ProfilePage);
+  }
+
+  onLoadUpdatesBlood(){
+    this.navCtrl.push(UpdatesPage);
+  }
+
+
 
 }
+

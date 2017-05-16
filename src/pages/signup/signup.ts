@@ -4,6 +4,7 @@ import { User } from "../../providers/user";
 import { Observable } from "rxjs/Observable";
 import { Login } from "../login/login";
 import { Dashboard } from "../dashboard/dashboard";
+import { AppSettings } from "../../providers/app-settings";
 
 
 @IonicPage()
@@ -19,7 +20,7 @@ export class Signup {
   success:any;
   error:any;
   
-  constructor(private userService:User,private loadingCtrl: LoadingController, private navCtrl: NavController) {
+  constructor(private userService:User,private app:AppSettings,private loadingCtrl: LoadingController, private navCtrl: NavController) {
     this.success=true;
     this.error=true;
   }
@@ -43,6 +44,7 @@ export class Signup {
           this.successMsg=this.data.message+"... Redirecting...";
           this.success=false;
           this.userService.setLoggingStatus(true);
+          this.app.setUser(this.data.user.username,this.data.user.email);
           setTimeout(()=>{
             this.navCtrl.setRoot(Dashboard);
           },3000);

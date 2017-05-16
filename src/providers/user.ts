@@ -22,6 +22,17 @@ export class User {
     
   }
 
+  getUser(email){
+
+    return this.http.put(this.appUrl+'get-user',{email:email}).map(res =>res.json());
+    
+  }
+
+  getUserUpdate(email){
+    return this.http.put(this.appUrl+'get-user-update',{email:email}).map(res =>res.json());
+
+  }
+
   setLoggingStatus(status){
     this.isLoggedIn=status;
   }
